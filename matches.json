@@ -1,0 +1,429 @@
+[
+  {
+    "date": "7/2",
+    "time": "01:00",
+    "stage": "ラウンド32",
+    "team1": "イングランド",
+    "team2": "DRコンゴ",
+    "tv_onair": [
+      "フジテレビ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/2",
+    "time": "05:00",
+    "stage": "ラウンド32",
+    "team1": "ベルギー",
+    "team2": "セネガル",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/2",
+    "time": "09:00",
+    "stage": "ラウンド32",
+    "team1": "アメリカ",
+    "team2": "ボスニア・ヘルツェゴビナ",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/3",
+    "time": "04:00",
+    "stage": "ラウンド32",
+    "team1": "スペイン",
+    "team2": "オーストリア",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/3",
+    "time": "08:00",
+    "stage": "ラウンド32",
+    "team1": "ポルトガル",
+    "team2": "クロアチア",
+    "tv_onair": [
+      "日テレ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/3",
+    "time": "12:00",
+    "stage": "ラウンド32",
+    "team1": "スイス",
+    "team2": "アルジェリア",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/4",
+    "time": "03:00",
+    "stage": "ラウンド32",
+    "team1": "オーストラリア",
+    "team2": "エジプト",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/4",
+    "time": "07:00",
+    "stage": "ラウンド32",
+    "team1": "アルゼンチン",
+    "team2": "カーボベルデ",
+    "tv_onair": [
+      "日テレ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/4",
+    "time": "10:30",
+    "stage": "ラウンド32",
+    "team1": "コロンビア",
+    "team2": "ガーナ",
+    "tv_onair": [],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/5",
+    "time": "02:00",
+    "stage": "ラウンド16",
+    "team1": "カナダ",
+    "team2": "モロッコ",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/5",
+    "time": "06:00",
+    "stage": "ラウンド16",
+    "team1": "パラグアイ",
+    "team2": "フランス",
+    "tv_onair": [
+      "日テレ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/6",
+    "time": "05:00",
+    "stage": "ラウンド16",
+    "team1": "ブラジル",
+    "team2": "ノルウェー",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/6",
+    "time": "09:00",
+    "stage": "ラウンド16",
+    "team1": "メキシコ",
+    "team2": "No.8の勝者",
+    "tv_onair": [],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/7",
+    "time": "04:00",
+    "stage": "ラウンド16",
+    "team1": "No.12の勝者",
+    "team2": "No.11の勝者",
+    "tv_onair": [
+      "日テレ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/7",
+    "time": "09:00",
+    "stage": "ラウンド16",
+    "team1": "No.10の勝者",
+    "team2": "No.9の勝者",
+    "tv_onair": [
+      "フジテレビ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/8",
+    "time": "01:00",
+    "stage": "ラウンド16",
+    "team1": "No.15の勝者",
+    "team2": "No.14の勝者",
+    "tv_onair": [],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/8",
+    "time": "05:00",
+    "stage": "ラウンド16",
+    "team1": "No.13の勝者",
+    "team2": "No.16の勝者",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/10",
+    "time": "05:00",
+    "stage": "準々決勝",
+    "team1": "No.18の勝者",
+    "team2": "No.17の勝者",
+    "tv_onair": [],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/11",
+    "time": "04:00",
+    "stage": "準々決勝",
+    "team1": "No.21の勝者",
+    "team2": "No.22の勝者",
+    "tv_onair": [
+      "フジテレビ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/12",
+    "time": "06:00",
+    "stage": "準々決勝",
+    "team1": "No.19の勝者",
+    "team2": "No.20の勝者",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/12",
+    "time": "10:00",
+    "stage": "準々決勝",
+    "team1": "No.23の勝者",
+    "team2": "No.24の勝者",
+    "tv_onair": [],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/15",
+    "time": "04:00",
+    "stage": "準決勝",
+    "team1": "No.25の勝者",
+    "team2": "No.26の勝者",
+    "tv_onair": [
+      "日テレ"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  },
+  {
+    "date": "7/16",
+    "time": "04:00",
+    "stage": "準決勝",
+    "team1": "No.27の勝者",
+    "team2": "No.28の勝者",
+    "tv_onair": [
+      "NHK"
+    ],
+    "tv_bs": [],
+    "tv_net": [
+      "DAZN"
+    ],
+    "tv_bsp4k": true,
+    "bsp4k_live": true,
+    "is_live_broadcast": true,
+    "score": null,
+    "is_japan": false
+  }
+]
