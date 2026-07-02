@@ -1547,9 +1547,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
-    "is_japan": false,
-    "note": "G組1位 vs 3位通過(AEHIJ)"
+    "score": {
+      "home": 3,
+      "away": 2
+      "note": "G組1位 vs 3位通過(AEHIJ)"
   },
   {
     "date": "7/2",
