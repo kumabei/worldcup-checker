@@ -1550,7 +1550,9 @@
     "score": {
       "home": 3,
       "away": 2
-      "note": "G組1位 vs 3位通過(AEHIJ)"
+    },
+    "is_japan": false,
+    "note": "G組1位 vs 3位通過(AEHIJ)"
   },
   {
     "date": "7/2",
