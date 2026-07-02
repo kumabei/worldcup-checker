@@ -441,6 +441,14 @@ def parse_card(card: str) -> dict | None:
                 "pk1": int(pk_m.group(1)),    "pk2": int(pk_m.group(2))
             }
 
+    # 延長戦: "ベルギー 3(延長)2 セネガル"
+    m = re.match(r"^(.+?)\s+(\d+)\(延長\)(\d+)\s+(.+?)$", card.strip())
+    if m:
+        return {
+            "team1": m.group(1).strip(), "score1": int(m.group(2)),
+            "score2": int(m.group(3)),   "team2": m.group(4).strip()
+        }
+
     # 通常スコア: "チーム1 X-Y チーム2"
     m = re.match(r"^(.+?)\s+(\d+)\s*[-－]\s*(\d+)\s+(.+?)$", card.strip())
     if m:
@@ -833,13 +841,24 @@ def main():
     update_inline_matches_scores(scores)
     update_inline_matches_teams(teams)
 
-    # ステップ5: 保存
+    # ステップ5: 更新済み INLINE_MATCHES を読み直して matches.json として保存
+    # （TV guide は直近試合のみだが INLINE_MATCHES は全104試合を持つ）
     print(f"\n【ステップ5】{OUTPUT_FILE} に保存中...")
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(matches, f, ensure_ascii=False, indent=2)
-
-    print_summary(matches)
-    print(f"\n✅ matches.json を保存しました: {OUTPUT_FILE}")
+    with open(INDEX_HTML, encoding="utf-8") as f:
+        content = f.read()
+    inline_m = re.search(r'const INLINE_MATCHES = (\[[\s\S]+?\]);', content)
+    if inline_m:
+        all_matches = json.loads(inline_m.group(1))
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump(all_matches, f, ensure_ascii=False, indent=2)
+        print_summary(all_matches)
+        print(f"\n✅ matches.json を保存しました: {OUTPUT_FILE}")
+    else:
+        print("  ⚠️  INLINE_MATCHES が見つかりません。TV guide データのみ保存します。")
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump(matches, f, ensure_ascii=False, indent=2)
+        print_summary(matches)
+        print(f"\n✅ matches.json を保存しました: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
