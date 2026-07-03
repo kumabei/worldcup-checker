@@ -1589,7 +1589,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 3,
+      "away": 0
+    },
     "is_japan": false,
     "note": "H組1位 vs J組2位"
   },
@@ -1607,7 +1610,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": false,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 2,
+      "away": 1
+    },
     "is_japan": false,
     "note": "K組2位 vs L組2位"
   },
@@ -1751,8 +1757,8 @@
     "date": "7/7",
     "time": "04:00",
     "stage": "ラウンド16",
-    "team1": "未定",
-    "team2": "未定",
+    "team1": "ポルトガル",
+    "team2": "スペイン",
     "tv_onair": [
       "日テレ"
     ],
