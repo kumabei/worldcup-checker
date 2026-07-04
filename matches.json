@@ -1631,7 +1631,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 2,
+      "away": 0
+    },
     "is_japan": false,
     "note": "NHK総合は13:05〜"
   },
@@ -1649,7 +1652,12 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 1,
+      "away": 1,
+      "pk_home": 2,
+      "pk_away": 4
+    },
     "is_japan": false,
     "note": "D組2位 vs G組2位"
   },
@@ -1667,7 +1675,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": false,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 3,
+      "away": 2
+    },
     "is_japan": false,
     "note": "J組1位 vs H組2位"
   },
@@ -1683,7 +1694,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": false,
     "is_live_broadcast": false,
-    "score": null,
+    "score": {
+      "home": 1,
+      "away": 0
+    },
     "is_japan": false,
     "note": "K組1位 vs 3位通過(DEIJL)"
   },
@@ -1791,8 +1805,8 @@
     "date": "7/8",
     "time": "01:00",
     "stage": "ラウンド16",
-    "team1": "未定",
-    "team2": "未定",
+    "team1": "アルゼンチン",
+    "team2": "エジプト",
     "tv_onair": [],
     "tv_bs": [],
     "tv_net": [],
@@ -1806,8 +1820,8 @@
     "date": "7/8",
     "time": "05:00",
     "stage": "ラウンド16",
-    "team1": "未定",
-    "team2": "未定",
+    "team1": "スイス",
+    "team2": "コロンビア",
     "tv_onair": [
       "NHK"
     ],
