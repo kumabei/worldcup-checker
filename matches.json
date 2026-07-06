@@ -1734,7 +1734,6 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
-    "bsp4k_time": "21:00",
     "is_live_broadcast": true,
     "score": {
       "home": 0,
@@ -1756,7 +1755,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 1,
+      "away": 2
+    },
     "is_japan": false
   },
   {
@@ -1770,7 +1772,6 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
-    "bsp4k_time": "21:00",
     "is_live_broadcast": false,
     "score": null,
     "is_japan": false
@@ -1788,7 +1789,6 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
-    "bsp4k_time": "19:00",
     "is_live_broadcast": true,
     "score": null,
     "is_japan": false
@@ -1806,7 +1806,6 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
-    "bsp4k_time": "21:00",
     "is_live_broadcast": true,
     "score": null,
     "is_japan": false
@@ -1822,7 +1821,6 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
-    "bsp4k_time": "21:00",
     "is_live_broadcast": false,
     "score": null,
     "is_japan": false
@@ -1854,8 +1852,8 @@
     "tv_bs": [],
     "tv_net": [],
     "tv_bsp4k": true,
-    "bsp4k_live": true,
-    "is_live_broadcast": true,
+    "bsp4k_live": false,
+    "is_live_broadcast": false,
     "score": null,
     "is_japan": false
   },
@@ -1880,8 +1878,8 @@
     "date": "7/12",
     "time": "06:00",
     "stage": "準々決勝",
-    "team1": "未定",
-    "team2": "未定",
+    "team1": "ノルウェー",
+    "team2": "イングランド",
     "tv_onair": [
       "NHK"
     ],
