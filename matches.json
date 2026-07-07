@@ -1790,7 +1790,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": false,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 0,
+      "away": 1
+    },
     "is_japan": false
   },
   {
@@ -1807,7 +1810,10 @@
     "tv_bsp4k": true,
     "bsp4k_live": false,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 1,
+      "away": 4
+    },
     "is_japan": false
   },
   {
@@ -1861,8 +1867,8 @@
     "date": "7/11",
     "time": "04:00",
     "stage": "準々決勝",
-    "team1": "未定",
-    "team2": "未定",
+    "team1": "スペイン",
+    "team2": "ベルギー",
     "tv_onair": [
       "フジテレビ"
     ],
