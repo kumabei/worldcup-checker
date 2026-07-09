@@ -142,7 +142,7 @@ main{max-width:560px;margin:0 auto;padding:0 0 24px;}
 .jp-tag{font-size:10px;color:var(--jp);font-weight:700;margin-top:2px;}
 
 .status-block{
-  flex:0 0 84px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:4px;
+  flex:0 0 108px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:4px;
 }
 .badge{
   font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:5px;
@@ -524,51 +524,54 @@ function groupByDate(matches) {
 
 // ============================================================
 // ステータスバッジを生成
-// is_live_broadcast: 地上波またはNHK BSで生中継される試合 → LIVE楕円を常時表示
-// BSP4K録画放送がある試合 (tv_bsp4k && !bsp4k_live) → 「録画 HH:MM」を表示
+// 各放送局バッジにLIVE/録画/再放送をインライン表示する
 // ============================================================
 function buildStatusBadge(match) {
-  // フィールドがない旧データはtv_onair/tv_bsから自動判定（後方互換）
-  const liveBroadcast = match.is_live_broadcast !== undefined
-    ? match.is_live_broadcast
-    : ((match.tv_onair && match.tv_onair.length > 0) || (match.tv_bs && match.tv_bs.length > 0));
-
-  const liveCircle = liveBroadcast ? `<div class="live-circle">LIVE</div>` : "";
   const hasOnair = match.tv_onair && match.tv_onair.length > 0;
   const hasBs    = match.tv_bs   && match.tv_bs.length   > 0;
-  const hasRec = match.tv_bsp4k && !match.bsp4k_live;
-  let recTime = "";
+  const hasRec   = match.tv_bsp4k && !match.bsp4k_live;
+  const liveBroadcast = match.is_live_broadcast !== undefined
+    ? match.is_live_broadcast
+    : (hasOnair || hasBs);
+
+  // BSP4K録画バッジ（地上波と並列表示の場合）
+  let recBadge = "";
   if (hasRec) {
     if (match.bsp4k_time) {
-      recTime = `<div class="rec-time">録画 ${match.bsp4k_time}</div>`;
+      recBadge = `<div class="badge bs" style="margin-top:3px;font-size:9px;"><i></i>BSP4K 録画${match.bsp4k_time}</div>`;
     } else if (!liveBroadcast) {
-      recTime = `<div class="rec-time">録画 ${match.time}</div>`;
+      recBadge = `<div class="badge bs" style="margin-top:3px;font-size:9px;"><i></i>BSP4K 録画${match.time}</div>`;
     }
   }
-  const rerunTime = match.bsp4k_rerun_time
-    ? `<div class="bsp4k-rerun-time">再放送 ${match.bsp4k_rerun_time}</div>` : "";
+
+  // BSP4K再放送バッジ
+  const rerunBadge = match.bsp4k_rerun_time
+    ? `<div class="badge rerun" style="margin-top:3px;font-size:9px;"><i></i>再放送 ${match.bsp4k_rerun_time}</div>`
+    : "";
 
   if (hasOnair) {
-    let html = `<div class="badge onair"><i></i>${match.tv_onair.join("・")}</div>`;
+    let html = `<div class="badge onair"><i></i>${match.tv_onair.join("・")} LIVE</div>`;
     if (hasBs) {
-      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>${match.tv_bs.join("・")}</div>`;
+      html += `<div class="badge bs" style="margin-top:3px;font-size:9px;"><i></i>${match.tv_bs.join("・")} LIVE</div>`;
     } else if (match.tv_bsp4k && match.bsp4k_live) {
-      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K 生</div>`;
+      html += `<div class="badge bs" style="margin-top:3px;font-size:9px;"><i></i>BSP4K LIVE</div>`;
     }
-    return html + recTime + rerunTime + liveCircle;
+    return html + recBadge + rerunBadge;
   }
   if (hasBs) {
-    let html = `<div class="badge bs"><i></i>${match.tv_bs.join("・")}</div>`;
+    let html = `<div class="badge bs"><i></i>${match.tv_bs.join("・")} LIVE</div>`;
     if (match.tv_bsp4k && match.bsp4k_live) {
-      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K 生</div>`;
+      html += `<div class="badge bs" style="margin-top:3px;font-size:9px;"><i></i>BSP4K LIVE</div>`;
     }
-    return html + recTime + rerunTime + liveCircle;
+    return html + recBadge + rerunBadge;
   }
   if (match.tv_bsp4k) {
-    const bsp4kBadge = `<div class="badge bs"><i></i>BSP4K</div>`;
-    return match.bsp4k_live
-      ? bsp4kBadge + rerunTime + liveCircle
-      : bsp4kBadge + recTime;
+    if (match.bsp4k_live) {
+      return `<div class="badge bs"><i></i>BSP4K LIVE</div>` + rerunBadge;
+    } else {
+      const t = match.bsp4k_time || match.time;
+      return `<div class="badge bs"><i></i>BSP4K 録画${t}</div>` + rerunBadge;
+    }
   }
   if (match.tv_net && match.tv_net.length > 0) {
     return match.tv_net.map(n => `<div class="badge net"><i></i>${n}</div>`).join("");
