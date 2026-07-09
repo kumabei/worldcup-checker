@@ -1876,7 +1876,10 @@
     "bsp4k_live": false,
     "bsp4k_time": "21:00",
     "is_live_broadcast": false,
-    "score": null,
+    "score": {
+      "home": 2,
+      "away": 0
+    },
     "is_japan": false
   },
   {
