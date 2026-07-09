@@ -160,16 +160,7 @@ main{max-width:560px;margin:0 auto;padding:0 0 24px;}
 .badge.rerun{background:var(--rerun-dim);color:var(--rerun);}
 .badge.rerun i{background:var(--rerun);}
 .net-tag{font-size:9.5px;color:var(--accent);font-weight:700;}
-.match.rerun{background:linear-gradient(90deg,rgba(180,138,255,0.08),transparent 60%);}
-.match.rerun::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rerun);}
-.match.rerun .team-line{color:var(--muted);}
-.rerun-ch{font-size:9.5px;color:var(--rerun);margin-top:2px;text-align:right;}
-.bsp4k-rerun-time{font-size:10px;color:var(--rerun);margin-top:2px;text-align:right;}
 
-.rec-time{
-  font-size:10px;color:var(--muted);
-  margin-top:4px;text-align:right;
-}
 .score{
   font-size:15px;font-weight:700;
   color:var(--accent);
@@ -474,12 +465,6 @@ const INLINE_MATCHES = [
 ];
 
 // 再放送データ
-const REBROADCASTS = [
-  {date:"7/8",  time:"15:10", team1:"カナダ",  team2:"モロッコ",  stage:"2回戦", channels:["NHK"]},
-  {date:"7/9",  time:"15:10", team1:"ブラジル", team2:"ノルウェー", stage:"2回戦", channels:["NHK"]},
-  {date:"7/9",  time:"21:00", team1:"ブラジル", team2:"ノルウェー", stage:"2回戦", channels:["BSP4K"]},
-  {date:"7/10", time:"15:10", team1:"スイス",   team2:"コロンビア", stage:"2回戦", channels:["NHK"]},
-];
 
 // 試合データ（fetch後に格納）
 let MATCHES = [];
@@ -546,7 +531,7 @@ function buildStatusBadge(match) {
 
   // BSP4K再放送バッジ
   const rerunBadge = match.bsp4k_rerun_time
-    ? `<div class="badge rerun" style="margin-top:3px;font-size:9px;"><i></i>再放送 ${match.bsp4k_rerun_time}</div>`
+    ? `<div class="badge rerun" style="margin-top:3px;font-size:9px;"><i></i>BSP4K 再放送 ${match.bsp4k_rerun_time}</div>`
     : "";
 
   if (hasOnair) {
@@ -641,30 +626,6 @@ function buildList() {
       </div>`;
     }
 
-    // 再放送カード
-    for (const r of REBROADCASTS.filter(r => r.date === group.date)) {
-      const hasOnairRerun = r.channels.some(c => TERRESTRIAL.has(c));
-      html += `<div class="match rerun"
-        data-date="${r.date}"
-        data-time="${r.time}"
-        data-jp="false"
-        data-onair="${hasOnairRerun}">
-        <div class="time-block">
-          <div class="t mono">${r.time}</div>
-          <div class="stage">${r.stage}<br><span style="opacity:.7">再放送</span></div>
-        </div>
-        <div class="teams-block">
-          <div class="teams-names">
-            <div class="team-line">${flagHtml(r.team1)}<span>${r.team1}</span></div>
-            <div class="team-line"><span class="vs">vs</span>${flagHtml(r.team2)}<span>${r.team2}</span></div>
-          </div>
-        </div>
-        <div class="status-block">
-          <div class="badge rerun"><i></i>再放送</div>
-          <div class="rerun-ch">${r.channels.join("・")}</div>
-        </div>
-      </div>`;
-    }
   }
 
   list.innerHTML = html;
