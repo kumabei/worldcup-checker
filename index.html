@@ -26,6 +26,8 @@
   --bs-dim:#16263A;
   --gray-dim:#262C3D;
   --jp:#E0344C;
+  --rerun:#B48AFF;
+  --rerun-dim:#2A1F44;
 }
 
 *{box-sizing:border-box;}
@@ -155,7 +157,14 @@ main{max-width:560px;margin:0 auto;padding:0 0 24px;}
 .badge.net i{background:var(--accent);}
 .badge.gray{background:var(--gray-dim);color:var(--muted);}
 .badge.gray i{background:var(--muted);}
+.badge.rerun{background:var(--rerun-dim);color:var(--rerun);}
+.badge.rerun i{background:var(--rerun);}
 .net-tag{font-size:9.5px;color:var(--accent);font-weight:700;}
+.match.rerun{background:linear-gradient(90deg,rgba(180,138,255,0.08),transparent 60%);}
+.match.rerun::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rerun);}
+.match.rerun .team-line{color:var(--muted);}
+.rerun-ch{font-size:9.5px;color:var(--rerun);margin-top:2px;text-align:right;}
+.bsp4k-rerun-time{font-size:10px;color:var(--rerun);margin-top:2px;text-align:right;}
 
 .rec-time{
   font-size:10px;color:var(--muted);
@@ -255,7 +264,7 @@ body.light{
   --bg:#F0F4FF;--surface:#FFFFFF;--surface-2:#E8EDF8;--border:#C8D0E8;
   --text:#0D1B6E;--muted:#5566AA;--accent:#003F8A;--accent-dim:#C8D8F0;
   --onair:#006633;--onair-dim:#D0F0E0;--bs:#003F8A;--bs-dim:#D0E4F8;
-  --gray-dim:#E0E4F0;--jp:#C0002A;
+  --gray-dim:#E0E4F0;--jp:#C0002A;--rerun:#7C3AED;--rerun-dim:#EDE9FE;
 }
 body.light header{background:rgba(240,244,255,0.95);}
 body.light .date-head{background:rgba(240,244,255,0.97);}
@@ -303,6 +312,7 @@ body.light .scrolltop{background:var(--accent);color:#FFFFFF;}
   <span><i style="background:var(--onair)"></i>地上波で生中継</span>
   <span><i style="background:var(--bs)"></i>BSのみ（録画含む）</span>
   <span><i style="background:var(--muted)"></i>地上波未定</span>
+  <span><i style="background:var(--rerun)"></i>再放送</span>
   <span style="color:var(--jp)">●日本代表戦</span>
 </div>
 
@@ -453,14 +463,22 @@ const INLINE_MATCHES = [
   {"date":"7/7","time":"09:00","stage":"ラウンド16","team1":"アメリカ","team2":"ベルギー","tv_onair":["フジテレビ"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"bsp4k_time":"21:00","is_live_broadcast":true,"score":{"home": 1, "away": 4},"is_japan":false},
   {"date":"7/8","time":"01:00","stage":"ラウンド16","team1":"アルゼンチン","team2":"エジプト","tv_onair":[],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":{"home": 3, "away": 2},"is_japan":false},
   {"date":"7/8","time":"05:00","stage":"ラウンド16","team1":"スイス","team2":"コロンビア","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":{"home": 0, "away": 0, "pk_home": 4, "pk_away": 3},"is_japan":false},
-  {"date":"7/10","time":"05:00","stage":"準々決勝","team1":"フランス","team2":"モロッコ","tv_onair":[],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false},
-  {"date":"7/11","time":"04:00","stage":"準々決勝","team1":"スペイン","team2":"ベルギー","tv_onair":["フジテレビ"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"is_live_broadcast":true,"score":null,"is_japan":false},
-  {"date":"7/12","time":"06:00","stage":"準々決勝","team1":"ノルウェー","team2":"イングランド","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false},
-  {"date":"7/12","time":"10:00","stage":"準々決勝","team1":"アルゼンチン","team2":"スイス","tv_onair":[],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false},
+  {"date":"7/10","time":"05:00","stage":"準々決勝","team1":"フランス","team2":"モロッコ","tv_onair":[],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"bsp4k_time":"21:00","is_live_broadcast":false,"score":null,"is_japan":false},
+  {"date":"7/11","time":"04:00","stage":"準々決勝","team1":"スペイン","team2":"ベルギー","tv_onair":["フジテレビ"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"bsp4k_time":"21:00","is_live_broadcast":true,"score":null,"is_japan":false},
+  {"date":"7/12","time":"06:00","stage":"準々決勝","team1":"ノルウェー","team2":"イングランド","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"bsp4k_rerun_time":"21:30","is_live_broadcast":true,"score":null,"is_japan":false},
+  {"date":"7/12","time":"10:00","stage":"準々決勝","team1":"アルゼンチン","team2":"スイス","tv_onair":[],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"bsp4k_time":"19:30","is_live_broadcast":false,"score":null,"is_japan":false},
   {"date":"7/15","time":"04:00","stage":"準決勝","team1":"未定","team2":"未定","tv_onair":["日テレ"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":false,"is_live_broadcast":true,"score":null,"is_japan":false},
   {"date":"7/16","time":"04:00","stage":"準決勝","team1":"未定","team2":"未定","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false},
   {"date":"7/19","time":"06:00","stage":"3位決定戦","team1":"未定","team2":"未定","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false},
   {"date":"7/20","time":"04:00","stage":"決勝","team1":"未定","team2":"未定","tv_onair":["NHK"],"tv_bs":[],"tv_net":[],"tv_bsp4k":true,"bsp4k_live":true,"is_live_broadcast":true,"score":null,"is_japan":false}
+];
+
+// 再放送データ
+const REBROADCASTS = [
+  {date:"7/8",  time:"15:10", team1:"カナダ",  team2:"モロッコ",  stage:"2回戦", channels:["NHK"]},
+  {date:"7/9",  time:"15:10", team1:"ブラジル", team2:"ノルウェー", stage:"2回戦", channels:["NHK"]},
+  {date:"7/9",  time:"21:00", team1:"ブラジル", team2:"ノルウェー", stage:"2回戦", channels:["BSP4K"]},
+  {date:"7/10", time:"15:10", team1:"スイス",   team2:"コロンビア", stage:"2回戦", channels:["NHK"]},
 ];
 
 // 試合データ（fetch後に格納）
@@ -518,30 +536,38 @@ function buildStatusBadge(match) {
   const liveCircle = liveBroadcast ? `<div class="live-circle">LIVE</div>` : "";
   const hasOnair = match.tv_onair && match.tv_onair.length > 0;
   const hasBs    = match.tv_bs   && match.tv_bs.length   > 0;
-  const hasRec   = match.tv_bsp4k && !match.bsp4k_live;
-  // LIVE放送がある試合は録画時刻を表示しない（LIVEと録画は排他）
-  const recTime  = (hasRec && !liveBroadcast) ? `<div class="rec-time">録画 ${match.bsp4k_time || match.time}</div>` : "";
+  const hasRec = match.tv_bsp4k && !match.bsp4k_live;
+  let recTime = "";
+  if (hasRec) {
+    if (match.bsp4k_time) {
+      recTime = `<div class="rec-time">録画 ${match.bsp4k_time}</div>`;
+    } else if (!liveBroadcast) {
+      recTime = `<div class="rec-time">録画 ${match.time}</div>`;
+    }
+  }
+  const rerunTime = match.bsp4k_rerun_time
+    ? `<div class="bsp4k-rerun-time">再放送 ${match.bsp4k_rerun_time}</div>` : "";
 
   if (hasOnair) {
     let html = `<div class="badge onair"><i></i>${match.tv_onair.join("・")}</div>`;
     if (hasBs) {
       html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>${match.tv_bs.join("・")}</div>`;
     } else if (match.tv_bsp4k && match.bsp4k_live) {
-      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K</div>`;
+      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K 生</div>`;
     }
-    return html + recTime + liveCircle;
+    return html + recTime + rerunTime + liveCircle;
   }
   if (hasBs) {
     let html = `<div class="badge bs"><i></i>${match.tv_bs.join("・")}</div>`;
     if (match.tv_bsp4k && match.bsp4k_live) {
-      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K</div>`;
+      html += `<div class="badge bs" style="margin-top:3px;font-size:9.5px;"><i></i>BSP4K 生</div>`;
     }
-    return html + recTime + liveCircle;
+    return html + recTime + rerunTime + liveCircle;
   }
   if (match.tv_bsp4k) {
     const bsp4kBadge = `<div class="badge bs"><i></i>BSP4K</div>`;
     return match.bsp4k_live
-      ? bsp4kBadge + liveCircle
+      ? bsp4kBadge + rerunTime + liveCircle
       : bsp4kBadge + recTime;
   }
   if (match.tv_net && match.tv_net.length > 0) {
@@ -566,6 +592,7 @@ function buildList() {
 
   let html = "";
   const todayKey = todayDateStr();
+  const TERRESTRIAL = new Set(["NHK","日テレ","フジテレビ","テレビ朝日","TBS"]);
 
   for (const group of DAYS) {
     const isToday = group.date === todayKey;
@@ -607,6 +634,31 @@ function buildList() {
         </div>
         <div class="status-block">
           ${buildStatusBadge(m)}
+        </div>
+      </div>`;
+    }
+
+    // 再放送カード
+    for (const r of REBROADCASTS.filter(r => r.date === group.date)) {
+      const hasOnairRerun = r.channels.some(c => TERRESTRIAL.has(c));
+      html += `<div class="match rerun"
+        data-date="${r.date}"
+        data-time="${r.time}"
+        data-jp="false"
+        data-onair="${hasOnairRerun}">
+        <div class="time-block">
+          <div class="t mono">${r.time}</div>
+          <div class="stage">${r.stage}<br><span style="opacity:.7">再放送</span></div>
+        </div>
+        <div class="teams-block">
+          <div class="teams-names">
+            <div class="team-line">${flagHtml(r.team1)}<span>${r.team1}</span></div>
+            <div class="team-line"><span class="vs">vs</span>${flagHtml(r.team2)}<span>${r.team2}</span></div>
+          </div>
+        </div>
+        <div class="status-block">
+          <div class="badge rerun"><i></i>再放送</div>
+          <div class="rerun-ch">${r.channels.join("・")}</div>
         </div>
       </div>`;
     }
