@@ -1897,7 +1897,10 @@
     "bsp4k_live": false,
     "bsp4k_time": "21:00",
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 2,
+      "away": 1
+    },
     "is_japan": false
   },
   {
@@ -1939,7 +1942,7 @@
     "time": "04:00",
     "stage": "準決勝",
     "team1": "フランス",
-    "team2": "未定",
+    "team2": "スペイン",
     "tv_onair": [
       "日テレ"
     ],
