@@ -1937,7 +1937,10 @@
     "bsp4k_live": false,
     "bsp4k_time": "19:30",
     "is_live_broadcast": false,
-    "score": null,
+    "score": {
+      "home": 3,
+      "away": 1
+    },
     "is_japan": false
   },
   {
@@ -1962,7 +1965,7 @@
     "time": "04:00",
     "stage": "準決勝",
     "team1": "イングランド",
-    "team2": "未定",
+    "team2": "アルゼンチン",
     "tv_onair": [
       "NHK"
     ],
