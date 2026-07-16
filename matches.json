@@ -1974,14 +1974,14 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {"home": 1, "away": 2},
     "is_japan": false
   },
   {
     "date": "7/19",
     "time": "06:00",
     "stage": "3位決定戦",
-    "team1": "未定",
+    "team1": "イングランド",
     "team2": "未定",
     "tv_onair": [
       "NHK"
@@ -1999,7 +1999,7 @@
     "time": "04:00",
     "stage": "決勝",
     "team1": "未定",
-    "team2": "未定",
+    "team2": "アルゼンチン",
     "tv_onair": [
       "NHK"
     ],
