@@ -1956,8 +1956,12 @@
     "tv_net": [],
     "tv_bsp4k": true,
     "bsp4k_live": false,
+    "bsp4k_time": "21:00",
     "is_live_broadcast": true,
-    "score": null,
+    "score": {
+      "home": 0,
+      "away": 2
+    },
     "is_japan": false
   },
   {
