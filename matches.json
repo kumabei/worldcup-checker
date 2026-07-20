@@ -2012,7 +2012,7 @@
     "tv_bsp4k": true,
     "bsp4k_live": true,
     "is_live_broadcast": true,
-    "score": null,
+    "score": {"home": 1, "away": 0},
     "is_japan": false
   }
 ]
